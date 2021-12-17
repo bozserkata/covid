@@ -14,4 +14,4 @@ incomelevels = wb.get_incomelevels()'''
 
 gdppercap = wb.data.DataFrame('NY.GDP.PCAP.CD',time=range(2017, 2020), labels=True)
 
-gdppercap.head()
+gdppercap.to_csv(index=False)
