@@ -17,8 +17,13 @@ gdppercap = wb.data.DataFrame('NY.GDP.PCAP.CD',time=range(2017, 2020), labels=Tr
 gdppercap.to_csv('gdp_per_capita.csv', index=False)
 
 series = wb.series.info(q='health')
-print(series)
+
 
 healthpercap = wb.data.DataFrame('SH.XPD.CHEX.PC.CD',time=range(2017, 2020), labels=True)
 
 healthpercap.to_csv('health_expenditure_per_capita.csv', index=False)
+
+
+
+gnipercap = wb.data.DataFrame('NY.GNP.PCAP.PP.CD',time=range(2017, 2020), labels=True)
+gnipercap.to_csv('gni_per_capita.csv', index=False)
