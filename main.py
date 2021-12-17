@@ -1,17 +1,17 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import wbgapi as wb
+import pandas as pd
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+pd.set_option('display.max_rows', 50)
+series = wb.series.info(q='population')
+series = wb.series.info()
+series = wb.series.info(q='gdp')
 
+'''
+countries = wb.get_countries()
+regions = wb.get_regions()
+incomelevels = wb.get_incomelevels()'''
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+gdppercap = wb.data.DataFrame('NY.GDP.PCAP.CD',time=range(2017, 2020), labels=True)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
-#test
+gdppercap.head()
